@@ -10,7 +10,8 @@ export async function sendChatMessage(message) {
     });
 
     const data = await response.json();
-    return data.reply;
+    const botReply = data.reply || "⚠️ No response received from AI";
+    return botReply;
   } catch (error) {
     console.error("Error calling backend:", error);
     return "⚠️ Backend error. Please try again later.";
