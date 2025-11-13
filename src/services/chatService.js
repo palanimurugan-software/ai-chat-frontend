@@ -1,6 +1,9 @@
+// const API ='http://localhost:5000';
+const API ='https://ai-chat-backend-cyr9.onrender.com';
+
 export async function sendChatMessage(message) {
   try {
-    const response = await fetch("http://localhost:5000/api/chat", {
+    const response = await fetch(`${API}/api/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message }),
